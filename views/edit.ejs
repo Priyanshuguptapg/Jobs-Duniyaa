@@ -1,0 +1,53 @@
+
+<%- include('./partials/header.ejs') %>
+
+    <h1>FORM TO EDIT JOB</h1>
+   <form action="/jobs/<%= job._id %>?_method=PATCH" method="post">
+    <div>
+            
+        <input value="<%= job.name %>" type="text" name="name" placeholder="JOB ROLE">
+    </div>
+    <div>
+        
+        <input value="<%= job.company %>" type="text" name="company" placeholder="COMPANY NAME">
+</div>
+<div>
+
+    <input value="<%= job.location %>" type="text" name="location" placeholder="JOB LOCATION">
+</div>
+
+<div>
+
+    <input value="<%= job.jobtype %>" type="text" name="jobtype" placeholder="JOB TYPE">
+</div>
+<div>
+
+    <input value="<%= job.eligibility %>" type="text" name="eligibility" placeholder="JOB ELIGIBILITY">
+</div>
+<div>
+  
+    <input value="<%= job.salary %>" type="number" name="salary" placeholder="SALARY IN LPA" min="0">
+</div>
+<div>
+
+    <input value="<%= job.address %>" type="text" name="address" placeholder="HEADQUARTER ADDRESS">
+</div>
+<div>
+
+    <input value="<%= job.logo %>" type="text" name="logo" placeholder="IMAGE FOR LOGO">
+</div>
+<div>
+
+    <input value="<%= job.description %>" type="text" name="description" placeholder="JOB DESCRIPTION" minlength="100">
+</div>
+<div>
+
+    <input value="<%= job.deadline %>" type="date" name="deadline" placeholder="JOB DEADLINE">
+</div>
+<div>
+    <button type="submit">EDIT JOB</button>
+</div>
+   </form> 
+
+   
+<%- include('./partials/footer.ejs') %>

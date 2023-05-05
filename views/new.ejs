@@ -1,0 +1,51 @@
+<%- include('./partials/header.ejs') %>
+
+    <h1>FORM TO Add JOB</h1>
+    <form action="/jobs" method="post">
+        <div>
+            
+            <input type="text" name="name" placeholder="JOB ROLE">
+        </div>
+        <div>
+            
+            <input type="text" name="company" placeholder="COMPANY NAME">
+    </div>
+    <div>
+
+        <input type="text" name="location" placeholder="JOB LOCATION">
+    </div>
+   
+    <div>
+
+        <input type="text" name="jobtype" placeholder="JOB TYPE">
+    </div>
+    <div>
+
+        <input type="text" name="eligibility" placeholder="JOB ELIGIBILITY">
+    </div>
+    <div>
+      
+        <input type="number" name="salary" placeholder="SALARY IN LPA" min="0">
+    </div>
+    <div>
+
+        <input type="text" name="address" placeholder="HEADQUARTER ADDRESS">
+    </div>
+    <div>
+
+        <input type="text" name="logo" placeholder="IMAGE FOR LOGO">
+    </div>
+    <div>
+
+        <input type="text" name="description" placeholder="JOB DESCRIPTION" minlength="100">
+    </div>
+    <div>
+
+        <input type="date" name="deadline" placeholder="JOB DEADLINE">
+    </div>
+    <div>
+        <button type="submit">ADD JOB</button>
+    </div>
+   </form> 
+
+   <%- include('./partials/footer.ejs') %>

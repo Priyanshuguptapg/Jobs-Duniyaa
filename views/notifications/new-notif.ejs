@@ -1,0 +1,18 @@
+<%- include('../partials/header.ejs') %>
+
+    <h1>FORM TO Add JOB</h1>
+    <form action="/notification" method="post">
+        <div>
+            
+            <input type="text" name="body" placeholder="NOTIFICATION">
+        </div>
+        <div>
+            
+            <input type="text" name="author" placeholder="AUTHOR NAME NAME">
+    </div>
+    <div>
+        <button type="submit">ADD NOTIFICATION</button>
+    </div>
+   </form> 
+
+   <%- include('../partials/footer.ejs') %>

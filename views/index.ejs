@@ -1,0 +1,15 @@
+<%- include('./partials/header.ejs') %>
+
+    <h1>
+        JOBS :-
+    </h1>
+    <form action="/jobs" method="get">
+        <input type="text" name="search">
+        <input type="submit" value="search">
+    </form>
+    <a href="/jobs/new">ADD JOB</a>
+    <% for(let job of jobs){ %>
+        <div> <%= job.name %> <a href="/jobs/<%= job._id %>">more</a></div>
+   <% } %>
+
+   <%- include('./partials/footer.ejs') %>

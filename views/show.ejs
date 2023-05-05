@@ -1,0 +1,33 @@
+<%- include('./partials/header.ejs') %>
+
+    <h1> <%= job.name %></h1>
+    <div>   <img src="<%= job.logo %>" alt="">></a> </div>
+    <div>Posted : <%= moment(job.createdAt).fromNow() %></div>
+    <div><%= job.company %></div>
+    <div><%= job.location %></div>
+    <div><%= job.jobtype %></div>
+    <div><%= job.eligibility %></div>
+    <div><%= job.deadline %></div>
+    <div><%= job.salary %></div>
+    <div><%= job.description %></div>
+    <a href="/jobs/<%= job._id %>/apply" class="btn btn-info">APPLY JOB</a>
+    <a href="/jobs/<%= job._id %>/test" class="btn btn-info">GIVE TEST</a>
+
+    <% if (currentUser && currentUser.isAdmin) { %>
+      
+    <a href="/jobs/<%= job._id %>/edit">EDIT</a>
+    <form action="/jobs/<%= job._id %>?_method=DELETE" method="post">
+       <input type="submit" value="Delete">
+    </form>
+
+    <% } %>
+
+    <% if (currentUser && currentUser.isAdmin) { %>
+    <h1>list of students that have applied</h1>
+    <% for( let student of job.appliedusers) { %>
+    <h4><%= student.username %></h4>
+    <% } %>
+    <% } %>
+    
+
+    <%- include('./partials/footer.ejs') %>

@@ -1,0 +1,14 @@
+<%- include('../partials/header.ejs') %>
+
+    <h1>NOTIFICATIONS</h1>
+    <a href="/notification/new">ADD A NEW NOTIFICATION</a>
+ <% for(let notifs of allnotifs){ %>
+    <div> BODY: <%= notifs.body.slice(0, 5)%>... , AUTHOR: <%= notifs.author %></div>
+<button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left"
+        title="<%= notifs.body %>">Read More</button>
+    <form action="/notification/<%= notifs._id %>?_method=DELETE" method="post">
+        <input type="submit" value="delete">
+    </form>
+    <% } %>
+
+<%- include('../partials/footer.ejs') %>
